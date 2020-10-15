@@ -3,6 +3,15 @@
 const APIkey = "95d6b760ca648908e702eff5f26d03c8";
 const baseURL = "http://api.openweathermap.org/data/2.5/weather?";
 const APIciudad = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=95d6b760ca648908e702eff5f26d03c8"
+const boton = document.getElementById("searchButton");
+boton.addEventListener("click", () => {
+    handleOnSearch();
+});
+let boton = document.getElementById("searchButton");
+let entrada = document.getElementById("searchInput");
+
+//creando search
+
 const onSuccess = position => {
     const {
         coords: { latitude, longitude }
@@ -43,5 +52,51 @@ const callWeather = (latitude, longitude) => {
     call.then(response => response.json()).then(weatherInfo => showWeatherInfo(weatherInfo));
     call.catch(error => console.error(error));
 };
+/*const searchResultsList = results => {
+    console.log("resulst", results);
+    const resultsList = document.getElementById("results");​
+    const { list: citiesList } = results;​
+    citiesList.map(city => {
+        console.log("==>>>", city);
+        const {
+            main: { temp },
+            name,
+            sys: { country },
+            weather: [{ description, icon }]
+        } = city;​
+        const listItem = document.createElement("li");
+        listItem.className = "list-item";
+        listItem.innerHTML = `${name}, ${country}, ${description}, ${convertKelvinToCelsius(temp)}°C`;
+        const img = document.createElement("img");
+        img.className = "list-item-icon";
+        img.src = `icons/${icon}.png`;
+        listItem.appendChild(img);
+        const addButton = document.createElement("button");
+        addButton.onclick = () => console.log("Soy el elemento ", listItem.innerHTML);
+        listItem.appendChild(addButton);​
+        resultsList.appendChild(listItem);
+    });
+};
+*/
+const searchCityWeather = () => {
+    const ciudad = "london";
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=95d6b760ca648908e702eff5f26d03c8`)
+        .then(response => response.json())
+        .then((weatherSearchInfo) => { console.log(weatherSearchInfo) })
+        .catch((error) => console.log(error));
+
+};
+
+function handleOnSearch() {
+    const text = document.getElementById("searchInput").value;
+    console.log("lo que vamos a buscar es ", text);​
+    if (text) {
+        searchCityWeather(text.toLowerCase());
+    }
+};
+
+
+
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
 //fetch(URL).then(onSuccess()).catch(onError());

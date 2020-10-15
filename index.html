@@ -9,31 +9,39 @@
 </head>
 
 <body>
+    <!-- search -->
+    <div class="search">
+        <input id="searchInput" type="text"></input>
+        <button id="searchButton" type="button">Buscar</button>
+    </div>
+    <ul id="results"></ul>
+    <!-- results + add button -->
+    <div class="list">
 
-    <div class="container">
-        <div class="app-title">
-            <p>Weather</p>
-        </div>
-        <div class="notification"> </div>
-        <div class="weather-container">
-            <div class="weather-icon">
-                <img id="icon" src="icons/unknown.png" alt="">
+        <div class="container">
+            <div class="app-title">
+                <p>Weather</p>
             </div>
-            <div class="temperature-value">
-                <p><span id="temperatura"></span>°<span>C</span></p>
-            </div>
-            <div class="temperature-description">
-                <p id="clima"></p>
-            </div>
-            <div class="location">
-                <p id="ubicacion">-</p>
-            </div>
-            <div class="country">
-                <p id="pais"></p>
+            <div class="notification"> </div>
+            <div class="weather-container">
+                <div class="weather-icon">
+                    <img id="icon" src="icons/unknown.png" alt="">
+                </div>
+                <div class="temperature-value">
+                    <p><span id="temperatura"></span>°<span>C</span></p>
+                </div>
+                <div class="temperature-description">
+                    <p id="clima"></p>
+                </div>
+                <div class="location">
+                    <p id="ubicacion">-</p>
+                </div>
+                <div class="country">
+                    <p id="pais"></p>
+                </div>
             </div>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 
