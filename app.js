@@ -3,7 +3,6 @@
 const APIkey = "95d6b760ca648908e702eff5f26d03c8";
 const baseURL = "http://api.openweathermap.org/data/2.5/weather?";
 const APIciudad = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=95d6b760ca648908e702eff5f26d03c8"
-const boton = document.getElementById("searchButton");
 let boton = document.getElementById("searchButton");
 let entrada = document.getElementById("searchInput");
 
