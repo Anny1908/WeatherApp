@@ -3,12 +3,26 @@
 }
 
 body {
-    background-color: royalblue;
+    background-color: #293251;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
 }
 
 .container {
     width: 300px;
     background-color: #FFF;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+
+.busqueda {
+    width: 300px;
+    background-color: hotpink;
     display: block;
     margin: 0 auto;
     border-radius: 10px;

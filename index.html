@@ -6,6 +6,7 @@
     <title>Weather App - JavaScript</title>
     <link rel="stylesheet" href="font/Rimouski.css">
     <link rel="stylesheet" href="style.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -14,10 +15,11 @@
         <input id="searchInput" type="text"></input>
         <button id="searchButton" type="button">Buscar</button>
     </div>
+    <!-- para incluir el mapa -->
+    <div id="mapa" type="text"></div>
     <ul id="results"></ul>
     <!-- results + add button -->
     <div class="list">
-
         <div class="container">
             <div class="app-title">
                 <p>Weather</p>
@@ -41,8 +43,34 @@
                 </div>
             </div>
         </div>
+        <div class="container busqueda">
+            <div class="app-title">
+                <p>Weather</p>
+            </div>
+            <div class="notification"> </div>
+            <div class="weather-container">
+                <div class="weather-icon">
+                    <img id="icon2" src="icons/unknown.png" alt="">
+                </div>
+                <div class="temperature-value">
+                    <p><span id="temperatura2"></span>°<span>C</span></p>
+                </div>
+                <div class="temperature-description">
+                    <p id="clima2"></p>
+                </div>
+                <div class="location">
+                    <p id="ubicacion2">-</p>
+                </div>
+                <div class="country">
+                    <p id="pais2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='map' class="rounded" style='min-width: 600px; height: 400px; margin-top: 2em'>
     </div>
     <script src="app.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 </body>
 
 </html>
