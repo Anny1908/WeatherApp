@@ -20,6 +20,10 @@ body {
     padding-bottom: 50px;
 }
 
+#results {
+    color: #F4F9FF;
+}
+
 .busqueda {
     width: 300px;
     background-color: hotpink;
